@@ -10,7 +10,7 @@ const UserList = () => {
           const response = await api.get('/users');
           setUsers(response.data);
         } catch (error) {
-          console.error('Error fetching users', error);
+          console.error('ERRO AO TENTAR PEGAR USERS', error);
         }
       };
   
@@ -19,7 +19,7 @@ const UserList = () => {
   
     return (
       <div>
-        <h2>Users</h2>
+        <h2>Users List</h2>
         <ul>
           {users.map((user) => (
             <li key={user.id}>{user.first_name} {user.last_name} - {user.email}</li>
