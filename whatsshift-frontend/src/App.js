@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UserList from './components/UserList';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
- What's Shift App
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/users" element={<UserList />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
