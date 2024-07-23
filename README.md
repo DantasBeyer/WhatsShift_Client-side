@@ -7,8 +7,8 @@ Dies ist die Client-Side-Anwendung für das WhatsShift-Projekt, das darauf abzie
 ## Technologie-Stack
 
 - **Frontend:** React
-- **State Management:** React Context oder Redux (abhängig von den Anforderungen)
-- **Styling:** Tailwind CSS oder Bootstrap
+- **State Management:** React Context 
+- **Styling:** Tailwind CSS und Bootstrap
 - **HTTP Anfragen:** Axios
 - **Routing:** React Router
 
