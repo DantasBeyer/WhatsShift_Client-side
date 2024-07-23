@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Adicione a lógica de autenticação aqui
+    navigate('/dashboard');
+  };
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
       <div className="w-full max-w-xs">
@@ -32,6 +40,7 @@ const Login = () => {
             <button
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={handleLogin}
             >
               Login
             </button>
