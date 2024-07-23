@@ -7,7 +7,11 @@ Dies ist die Client-Side-Anwendung (Mobile First) für das WhatsShift-Projekt, d
 ## Technologie-Stack
 
 - **Frontend:** React
+
+- **State Management:** React Context 
+
 - **State Management:** React Redux
+
 - **Styling:** Tailwind CSS und Bootstrap
 - **HTTP Anfragen:** Axios
 - **Routing:** React Router
