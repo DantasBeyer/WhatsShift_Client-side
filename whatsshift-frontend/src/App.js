@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./assets/components/Login";
 import Dashboard from "./assets/components/Dashboard";
-import Dienstplan from "./assets/components/Dienstplan";
+import Dienstplan from "./assets/components/dienstplan/Dienstplan";
 import Zeiterfassung from "./assets/components/Zeiterfassung";
 import Verfügbarkeit from "./assets/components/Verfügbarkeit";
 import UserProfile from "./assets/components/UserProfile";
