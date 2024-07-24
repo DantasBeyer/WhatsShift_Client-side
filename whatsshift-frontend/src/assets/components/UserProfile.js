@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -11,18 +11,36 @@ const UserProfile = () => {
 
   //Busca perfil do usuario
   useEffect(() => {
-    axios.get("http://localhost:5000/userProfile/${userId}")
-        .then(response =>{
-            setName(response.data.name);
-            setEmail(response.data.email);
-            setPhone(response.data.phone)
-        })
-  });
+    axios
+      .get("http://localhost:5000/userProfile/${userId}")
+      .then((response) => {
+        setName(response.data.name);
+        setEmail(response.data.email);
+        setPhone(response.data.phone);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [userId]);
 
-  // Funktion zum Speichern der Profilinformationen
   const handleSaveProfile = () => {
-    // Hier können Sie Logik hinzufügen, um die Profilinformationen zu speichern
-    alert("Profile saved successfully!");
+    const userProfile = { name, email, phone };
+
+    // Funktion zum Speichern der Profilinformationen
+    const handleSaveProfile = () => {
+      // Hier können Sie Logik hinzufügen, um die Profilinformationen zu speichern
+      alert("Profile saved successfully!");
+    };
+
+    // Atualizar perfil do usuário
+    axios
+      .post(`http://localhost:5000/userProfile/update/${userId}`, userProfile)
+      .then((response) => {
+        alert("Profile saved successfully!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
