@@ -1,5 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -10,25 +11,25 @@ const Dashboard = () => {
       <div className="flex flex-col space-y-4">
         <button
           className="bg-green-500 text-white py-2 px-4 rounded"
-          onClick={() => navigate('/dienstplan')}
+          onClick={() => navigate("/dienstplan")}
         >
           Dienstplan
         </button>
         <button
           className="bg-green-500 text-white py-2 px-4 rounded"
-          onClick={() => navigate('/zeiterfassung')}
+          onClick={() => navigate("/zeiterfassung")}
         >
           Zeiterfassung
         </button>
         <button
           className="bg-green-500 text-white py-2 px-4 rounded"
-          onClick={() => navigate('/verfügbarkeit')}
+          onClick={() => navigate("/verfügbarkeit")}
         >
           Verfügbarkeit
         </button>
         <button
           className="bg-green-500 text-white py-2 px-4 rounded"
-          onClick={() => navigate('/user-profile')}
+          onClick={() => navigate("/user-profile")}
         >
           User Profile
         </button>

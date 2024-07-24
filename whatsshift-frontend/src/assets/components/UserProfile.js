@@ -1,16 +1,28 @@
-import React, { useState } from 'react'; // Importieren von React und useState Hook
-import { useNavigate } from 'react-router-dom'; // Importieren des useNavigate Hook
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UserProfile = () => {
-  const [name, setName] = useState(''); // Zustand für den Namen des Benutzers
-  const [email, setEmail] = useState(''); // Zustand für die E-Mail des Benutzers
-  const [phone, setPhone] = useState(''); // Zustand für die Telefonnummer des Benutzers
+  const [name, setName] = useState(""); // Zustand für den Namen des Benutzers
+  const [email, setEmail] = useState(""); // Zustand für die E-Mail des Benutzers
+  const [phone, setPhone] = useState(""); // Zustand für die Telefonnummer des Benutzers
   const navigate = useNavigate(); // Hook für Navigation
+  const userId = "ID_DO_USUARIO_AQUI"; // aqui vem o id do usuario
+
+  //Busca perfil do usuario
+  useEffect(() => {
+    axios.get("http://localhost:5000/userProfile/${userId}")
+        .then(response =>{
+            setName(response.data.name);
+            setEmail(response.data.email);
+            setPhone(response.data.phone)
+        })
+  });
 
   // Funktion zum Speichern der Profilinformationen
   const handleSaveProfile = () => {
     // Hier können Sie Logik hinzufügen, um die Profilinformationen zu speichern
-    alert('Profile saved successfully!');
+    alert("Profile saved successfully!");
   };
 
   return (
@@ -18,7 +30,10 @@ const UserProfile = () => {
       <h1 className="text-3xl font-bold mb-4">User Profile</h1>
       <div className="w-full max-w-md">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="name"
+          >
             Name
           </label>
           <input
@@ -30,7 +45,10 @@ const UserProfile = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -42,7 +60,10 @@ const UserProfile = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="phone"
+          >
             Phone
           </label>
           <input
@@ -62,7 +83,7 @@ const UserProfile = () => {
       </div>
       <button
         className="bg-blue-500 text-white py-2 px-4 rounded mt-4"
-        onClick={() => navigate('/dashboard')}
+        onClick={() => navigate("/dashboard")}
       >
         Back to Dashboard
       </button>
