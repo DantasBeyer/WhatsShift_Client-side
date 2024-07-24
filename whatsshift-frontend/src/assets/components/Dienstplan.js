@@ -4,14 +4,21 @@ import "react-calendar/dist/Calendar.css";
 import "./Dienstplan.css";
 
 const Dienstplan = () => {
-  return (
-    <div className="min-h.screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-3x1 font-bold mb-4"> Dienstplan</h1>
-    
+  const [date, setDate] = useState(newDate()); // Zustant für das Datum
+  const [shifts, setSifts] = useState([]); // Zustant dür die Schichten
+
+  // Datum Ändern
+  const handleDateChange = (date) => {
+    setDate(date);
+  };
+  // Schicht hinzufügen
+  const handleAddShift = () =>{
+    const schift = prompt ('Enter shift details (e.g., 09:00-17:00):');
+    if(schift){
+      setShift([...shifts, {date, shift}]); // Neue Schicht zum Zustand hinzufügen
+    }
 
 
-    </div>
-  );
 };
 
 export default Dienstplan;
